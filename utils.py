@@ -273,7 +273,7 @@ class DKT(object):
         sess = self.sess
         saver = tf.train.Saver()
         save_path = os.path.join(save_dir, self.model_name)
-        if os.path.exists(save_path):
+        if os.path.exists(save_path + '.index'):
             saver.restore(sess=sess, save_path=save_path)
         else:
             self._log("No model found at {}".format(save_path))
